@@ -1,0 +1,106 @@
+@media
+only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+
+    .listing{
+        width: unset;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+    #search{
+        border:1px solid #eaeced;
+        border-radius: 5px;
+        width: 370px;
+        height: 35px;
+        font-size: 16px;
+        text-indent: 10px;
+        outline-width: 0;
+        line-height: 35px;
+        margin:10px;
+        -webkit-appearance: textfield;
+    }
+    .listing h2{
+        color: #3b3b3b;
+        font-size: 1em;
+        font-weight: 400;
+        margin: 5px;
+    }
+    table{
+        margin-top:20px;
+    }
+    /* Force table to not be like tables anymore */
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+
+    /* Hide table headers (but not display: none;, for accessibility) */
+    thead tr {
+      display: none;
+    }
+    .listing table td{
+        text-align: left;
+    }
+    tr { border: 1px solid #ccc; }
+
+    td {
+        /* Behave  like a "row" */
+        border: none;
+        border-bottom: 1px solid #eee;
+        height: 30px;
+        text-align: right;
+    }
+
+    td:before {
+        /* Now like a table header */
+        float: left;
+        white-space: nowrap;
+        padding-right:5px;
+    }
+
+    /*
+    Label the data
+    */
+    td:nth-of-type(1):before { content: "Suppiler:"; }
+    td:nth-of-type(2):before { content: "Pound Rating:"; }
+    td:nth-of-type(3):before { content: "Reference:"; }
+    td:nth-of-type(4):before { content: "Value:"; }
+}
+@media only screen and (min-width: 1024px){
+
+    .listing{
+        width: 900px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+    #search{
+        border:1px solid #eaeced;
+        border-radius: 5px;
+        width: 370px;
+        font-size: 19px;
+        text-indent: 10px;
+        padding:0 0 0 10px;
+        line-height: normal !important;
+
+    }
+    .listing table td{
+        text-align: center;
+    }
+}
+input { line-height: 2; height: 2em; }  /*Hack for safari*/
+
+
+select::-ms-expand {
+    display: none; /* remove default arrow in IE 10 and 11 */
+}
+
+/* target Internet Explorer 9 to undo the custom arrow */
+@media screen and (min-width:0\0) {
+    select {
+        background:none\9;
+        padding: 5px\9;
+    }
+}
