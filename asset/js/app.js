@@ -1,5 +1,6 @@
-$(document).ready(function () {
+$(document).ready(() => {
 
+    // Parsing data from json to object
     $.get("json/page1.json").done((page1) => {
         $.get("json/page1.json").done((page2) => {
             var data = page1.concat(page2);
@@ -16,8 +17,8 @@ $(document).ready(function () {
                     });
 
                 },
-
-                createdRow: function (rowElement, rowData) {
+                // Created pounds rating
+                createdRow: (rowElement, rowData) => {
                     let rating = rowData.rating;
                     let $ratingTd = $(rowElement).find("td:nth-child(2)").empty();
                     for (let i = 0; i < rating; i++) {
@@ -28,6 +29,7 @@ $(document).ready(function () {
                     }
 
                 },
+                // Datatable settings and parsing data from object
                 data: data,
                 columnDefs: [
                     {"width": "50%"}
@@ -63,28 +65,31 @@ $(document).ready(function () {
                 "pageLength": 5
 
             });
-            table.on('click', 'tr', () => {
-                const data = table.row(this).data();
+            // Get data from object and parse to html -> Popup
+            table.on('click', 'tr', function()  {
+                $(this).blur();
+                var data = table.row(this).data();
                 event.preventDefault();
-                $(this).blur(); // Manually remove focus from clicked link.
-
                 $("#nameModal").text(data.name);
                 $("#ratingModal").text(data.rating);
                 $("#referenceModal").text(data.reference);
                 $("#valueModal").text(data.value);
                 $("#popupModal").modal();
             });
+
+            // search event
             $('#searchButton').click((event) => {
                 table.search($("#search").val()).draw();
                 event.preventDefault();
             });
+            // clear event
+            $("#clearButton").click(() => {
+                table.search($("#search").val(''));
+            });
+            //filter pound rating
             $("#poundRating").change( function() {
                 var selectedRating = $(this).children("option:selected").val();
                 table.column(1).search(selectedRating).draw();
-            });
-            $('#clearButton').click(() => {
-                table.search($("#search").val(''));
-
             });
 
 

@@ -12,7 +12,7 @@ only screen and (max-width: 760px),
     #search{
         border:1px solid #eaeced;
         border-radius: 5px;
-        width: 370px;
+        width: 355px;
         height: 35px;
         font-size: 16px;
         text-indent: 10px;
@@ -58,7 +58,17 @@ only screen and (max-width: 760px),
         white-space: nowrap;
         padding-right:5px;
     }
-
+    select {
+        width: 134px;
+        height: 24px;
+        font-size: 14px;
+        border: 1px solid #ccc;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        padding: 2px 0px 0px 5px;
+        background: url(../images/arrow-couple.png) 96% / 6% no-repeat #eee;
+    }
     /*
     Label the data
     */
@@ -68,7 +78,17 @@ only screen and (max-width: 760px),
     td:nth-of-type(4):before { content: "Value:"; }
 }
 @media only screen and (min-width: 1024px){
-
+    select {
+        width: 180px;
+        height: 24px;
+        font-size: 14px;
+        border: 1px solid #ccc;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        padding: 2px 0px 0px 5px;
+        background: url(../images/arrow-couple.png) 96% / 6% no-repeat #eee;
+    }
     .listing{
         width: 900px;
         display: flex;
@@ -90,17 +110,17 @@ only screen and (max-width: 760px),
         text-align: center;
     }
 }
-input { line-height: 2; height: 2em; }  /*Hack for safari*/
+    input { line-height: 2; height: 2em; }  /*Hack for safari*/
 
 
-select::-ms-expand {
-    display: none; /* remove default arrow in IE 10 and 11 */
-}
-
-/* target Internet Explorer 9 to undo the custom arrow */
-@media screen and (min-width:0\0) {
-    select {
-        background:none\9;
-        padding: 5px\9;
+    select::-ms-expand {
+        display: none; /* remove default arrow in IE 10 and 11 */
     }
+
+    /* target Internet Explorer 9 to undo the custom arrow */
+@media screen and (min-width:0\0) {
+        select {
+            background:none\9;
+            padding: 5px\9;
+        }
 }

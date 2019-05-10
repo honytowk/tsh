@@ -266,8 +266,6 @@ table.dataTable thead .sorting_asc{
     border: 0;
 }
 
-
-
 .rightArrow {
     transform: rotate(-45deg);
     -webkit-transform: rotate(-45deg);
@@ -283,20 +281,23 @@ table.dataTable thead .sorting_asc{
     display: inline-block;
     padding: 2px;
 }
-select {
-    width: 180px;
-    height: 24px;
-    font-size: 14px;
-    border: 1px solid #ccc;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    padding: 2px 0px 0px 5px;
-    background: url(../images/arrow-couple.png) 96% / 6% no-repeat #eee;
-}
+
 #nameModal:first-letter{
     text-transform: uppercase;
 }
 #nameModal{
     font-size: 2em;
+    color: #2288b7;
+    font-weight: 300;
+}
+.modalData{
+    margin: 20px;
+}
+#popupModal h4{
+    text-transform: uppercase;
+    font-size: 1em;
+    color: #65b7b7;
+}
+.forFivePounds{
+    color: #d6d5d4;
 }
